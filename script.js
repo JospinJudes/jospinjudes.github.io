@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('2024-07-25 (1).csv')
+    const currentYeatSpan = document.getElementById('current-year');
+
+    if (currentYeatSpan) {
+        currentYeatSpan.textContent = new Date().getFullYear();
+    }
+
+    fetch('assets/data/results.csv')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -9,19 +15,22 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             Papa.parse(data, {
                 header: true,
+                skipEmptyLines: true,
                 complete: function(results) {
-                    const table = document.getElementById('csvTable');
-                    const headerRow = document.createElement('tr');
-
                     // Create table headers
+
+                    const tableHeaderRow = document.getElementById('csv-table-header-row');
+
                     for (const header in results.data[0]) {
                         const th = document.createElement('th');
                         th.textContent = header;
-                        headerRow.appendChild(th);
+                        tableHeaderRow.appendChild(th);
                     }
-                    table.appendChild(headerRow);
 
                     // Create table rows
+
+                    const tableBody = document.getElementById('csv-table-body');
+
                     results.data.forEach(row => {
                         const tr = document.createElement('tr');
                         for (const cell in row) {
@@ -29,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             td.textContent = row[cell];
                             tr.appendChild(td);
                         }
-                        table.appendChild(tr);
+                        tableBody.appendChild(tr);
                     });
                 }
             });

@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultat du Challenge Total Energie 2024</title>
+    <title>Résultats du Challenge Total Energies 2024</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/images/logo-BE.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
-        <img src="cole_d_t_sur_l_intelligence_artificielle_cover.jpg" alt="Site ">
-        <h1>Resultat du Challenge Total Energie 2024</h1>
+        <img id="logo-left" src="assets/images/logo-BE.png" alt="Logo de Bénin Excellence">
+        <h1>Résultats du Challenge Total Energies 2024</h1>
+        <img id="logo-right" src="assets/images/logo-totalenergies.svg" alt="Logo de Total Énergie">
     </header>
     <main>
-        <table id="csvTable"></table>
+        <img id="banner" src="assets/images/banner.jpg" alt="Site ">
+        <section>
+            <table id="csv-table">
+                <thead>
+                    <tr id="csv-table-header-row">
+                    </tr>
+                </thead>
+                <tbody id="csv-table-body">
+                </tbody>
+            </table>
+        </section>
     </main>
     <footer>
-        &copy; 2024 Votre Entreprise. Tous droits réservés.
+        &copy;&nbsp;<span id="current-year"></span>&nbsp;Bénin Excellence. Tous droits réservés.
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

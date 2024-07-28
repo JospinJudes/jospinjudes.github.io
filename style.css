@@ -1,77 +1,100 @@
+:root {
+    --main-color: #1e90ff; /* Bleu principal */
+    --main-color-hover: #0077B6; /* Bleu foncé */
+    --shadow-color: rgba(0, 0, 0, 0.5); /* Ombre */
+}
+
 body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    overflow: hidden;
 }
 
 header {
-    text-align: center;
-    background-color: #1E90FF; /* Bleu principal */
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 25px;
+    background-color: var(--main-color);
     color: white;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px 1px black;
 }
 
-header img {
-    max-width: 150px; /* Taille de l'image */
-    height: auto;
-    display: block;
-    margin: 0 auto;
+#logo-left {
+    height: 50px;
+}
+
+#logo-right {   
+    height: 50px;
+}
+
+#banner {
+    width: 100vw;
+    display: none;
 }
 
 h1 {
-    margin-top: 10px;
     font-size: 2em;
 }
 
 main {
-    padding: 20px;
+    height: calc(100vh - 140px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main section {
+    position: relative;
+    height: calc(100vh - 240px);
+    width: calc(100vw - 100px);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
     background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px var(--shadow-color);
 }
 
-table, th, td {
+table th, table td {
     border: 1px solid #ddd;
-}
-
-th, td {
-    padding: 12px;
+    padding: 0 12px;
     text-align: left;
 }
 
-th {
-    background-color: #1E90FF; /* Bleu principal */
+table thead {
+    position: sticky;
+    background-color: var(--main-color);
     color: white;
     text-transform: uppercase;
 }
 
-tr:nth-child(even) {
-    background-color: #f9f9f9;
+table tr {
+    height: 50px;
+    max-height: 50px !important;
 }
 
-tr:hover {
+table tbody tr:hover {
     background-color: #f1f1f1;
 }
 
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #1E90FF; /* Bleu principal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color: var(--main-color);
     color: white;
     position: fixed;
     width: 100%;
     bottom: 0;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -2px 4px var(--shadow-color);
 }
-
-
-
-
