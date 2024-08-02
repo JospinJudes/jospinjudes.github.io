@@ -30,9 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     results.data.forEach((row, index) => {
                         const tr = document.createElement('tr');
-                        if (index < 10) {
-                            tr.classList.add('highlight'); // Ajout de la classe 'highlight'
-                        }
+                        //if (index < 10) {
+                           // tr.classList.add('highlight'); // Ajout de la classe 'highlight'
+                      //  }
                         for (const cell in row) {
                             const td = document.createElement('td');
                             td.textContent = row[cell];
