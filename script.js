@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const currentYeatSpan = document.getElementById('current-year');
+    const currentYearSpan = document.getElementById('current-year');
 
-    if (currentYeatSpan) {
-        currentYeatSpan.textContent = new Date().getFullYear();
+    if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
     }
 
     fetch('assets/data/results.csv')
@@ -18,9 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 skipEmptyLines: true,
                 complete: function(results) {
                     // Create table headers
-
                     const tableHeaderRow = document.getElementById('csv-table-header-row');
-
                     for (const header in results.data[0]) {
                         const th = document.createElement('th');
                         th.textContent = header;
@@ -28,13 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
 
                     // Create table rows
-
                     const tableBody = document.getElementById('csv-table-body');
 
-                    results.data.forEach(row => {
+                    results.data.forEach((row, index) => {
                         const tr = document.createElement('tr');
                         if (index < 10) {
-                            tr.classList.add('highlight');
+                            tr.classList.add('highlight'); // Ajout de la classe 'highlight'
                         }
                         for (const cell in row) {
                             const td = document.createElement('td');
