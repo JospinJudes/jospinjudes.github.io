@@ -33,6 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     results.data.forEach(row => {
                         const tr = document.createElement('tr');
+                        if (index < 10) {
+                            tr.classList.add('highlight');
                         for (const cell in row) {
                             const td = document.createElement('td');
                             td.textContent = row[cell];
