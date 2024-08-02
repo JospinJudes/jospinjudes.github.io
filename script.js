@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
             Papa.parse(data, {
                 header: true,
                 skipEmptyLines: true,
-                complete: function(results) {
+                complete: function(result) {
                     // Create table headers
                     const tableHeaderRow = document.getElementById('csv-table-header-row');
-                    for (const header in results.data[0]) {
+                    for (const header in result.data[0]) {
                         const th = document.createElement('th');
                         th.textContent = header;
                         tableHeaderRow.appendChild(th);
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Create table rows
                     const tableBody = document.getElementById('csv-table-body');
 
-                    results.data.forEach((row, index) => {
+                    result.data.forEach((row, index) => {
                         const tr = document.createElement('tr');
                         //if (index < 10) {
                            // tr.classList.add('highlight'); // Ajout de la classe 'highlight'
