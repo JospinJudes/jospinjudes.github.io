@@ -54,7 +54,7 @@ main section {
     height: calc(100vh - 240px);
     width: calc(100vw - 100px);
     overflow-y: auto;
-    overflow-x: hidden;
+    overflow-x: auto;
 }
 
 table {
